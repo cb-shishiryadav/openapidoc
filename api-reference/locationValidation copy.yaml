@@ -1,0 +1,749 @@
+openapi: 3.0.3
+info:
+  description: "## Overview\nLocation validate is a Service Provider Interface (SPI)\
+    \ that helps Chargebee communicate with API platforms providing the following\
+    \ services:\n- Validate location of customer\n\nIf you have an API that provides\
+    \ the services mentioned above and want Chargebee to be able to integrate with\
+    \ it, you can build an adapter service according to this specification.\n\n##\
+    \ Terminology\nHere's a list of terms we've used to describe this specification.\n\
+    ### Merchant \n  Chargebee’s customer who is carrying out the business of selling\
+    \ products. Also known as the Seller. The Seller has one or more Chargebee accounts.\n\
+    ### Chargebee \n The SaaS which manages subscriptions and revenue operations on\
+    \ behalf of the Merchant. Chargebee makes API calls to the Tax Service Adapter\
+    \ for tax estimation and tax filing of transactions between the Merchant and the\
+    \ Customer.\n### Customer \nMerchant’s customer who purchases products from the\
+    \ Merchant. Their customer record(s) and other details are stored within Chargebee\
+    \ under the Merchant’s account.\n### Service Provider\nThe service which provides\
+    \ services for merchants.\n### Service Adapter \nThe SPI for which the spec is\
+    \ defined in this document. This adapter serves the following purposes:\n- Translates\
+    \ API requests (as defined in this document) from Chargebee to the request format\
+    \ specified by the Service Provider's API.\n- Translates API responses from the\
+    \ Service Provider APIs to the format understood by Chargebee (as defined in this\
+    \ document).\n### Authorization\nChargebee uses HTTP header-based authorization\
+    \ for all the API endpoints associated with Service Adapter. We dynamically pass\
+    \ this authorization key in the HTTP header. The parameter that holds this key\
+    \ is found in the JSON object `api_configuration` required for configuring your\
+    \ onboarding on Chargebee's marketplace. In the `api_configuration` object, our\
+    \ [Taxes Service Adapter SPI](https://chargebee.atlassian.net/l/cp/ca5aZ1mA) checks\
+    \ the authorization key parameter from `credential_configuration.id` and creates\
+    \ the HTTP header-based input query parameter for authorization. The `credential_configuration`\
+    \ is an array of objects with an `id` attribute, and the value of `id` is the\
+    \ parameter containing the authorization key.\n\n  Following are the JSON snippets\
+    \ for your reference.\n\n   ```json\n      \"api_configuration\": {\n        \
+    \  \"api_base_url\": \"https://xyz.abc.com/chargebee\",\n          \"credential_configuration\"\
+    : [ \n            {\n              \"id\":\"authorization_key\",\n           \
+    \   \"name\": \"Authorization Key\", \n              \"type\": \"text\",\n   \
+    \           \"is_sensitive\": true \n            },\n            {\n         \
+    \     \"id\": \"client_secret\",\n              \"name\": \"Client Secret\",\n\
+    \              \"type\": \"text\",\n              \"is_sensitive\": true\n   \
+    \         }\n          ]\n        }\n   ```\n"
+  title: Tax Location Validation Service Adapter SPI
+  version: 0.0.1
+servers:
+- description: Production SPI server.
+  url: https://rest.taxes.provider.com/api/v1
+- description: Sandbox SPI server.
+  url: https://sandbox.taxes.provider.com/api/v1
+security:
+- bearerAuth: []
+- apiKey: []
+tags:
+- description: Endpoints to validate the credentials used for calling the Service
+    Provider.
+  name: Authentication
+- description: Endpoints to monitor the health of the Service Provider and the Service
+    Adapter.
+  name: Health
+- description: Endpoints to validate the location of the end customer.
+  name: LocationValidate
+paths:
+  /health:
+    get:
+      description: This endpoint is used to fetch the health status of the Service
+        Provider.
+      operationId: fetchHealth
+      responses:
+        "200":
+          content:
+            application/json:
+              example:
+                status: UP
+                version: 1.0.0
+                description: The service is healthy.
+                components:
+                - id: app-db-memory
+                  name: Application Database
+                  type: DATABASE
+                  status: UP
+                - id: adapter-server
+                  name: Adapter API Server
+                  type: ADAPTER
+                  status: UP
+                - id: service-server
+                  name: API Server
+                  type: API
+                  status: UP
+                time: 2022-11-01T10:42:08.131+05:30
+              schema:
+                $ref: '#/components/schemas/HealthCheckResponse'
+          description: Service is healthy.
+        "429":
+          description: Too many requests.
+        "500":
+          content:
+            application/json:
+              examples:
+                Error500:
+                  $ref: '#/components/examples/Error500Response'
+              schema:
+                $ref: '#/components/schemas/BasicErrorResponse'
+          description: Unexpected error while processing request.
+        "503":
+          content:
+            application/json:
+              example:
+                status: DOWN
+                version: 1.0.0
+                description: The service is unhealthy. Several components are down.
+                components:
+                - id: app-db-memory
+                  name: Application Database Memory Usage
+                  type: DATABASE
+                  status: UP
+                - id: adapter-server
+                  name: Adapter API Server
+                  type: ADAPTER
+                  status: DOWN
+                - id: service-server
+                  name: API Server
+                  type: API
+                  status: DOWN
+                time: 2022-11-01T10:42:08.131+05:30
+              schema:
+                $ref: '#/components/schemas/HealthCheckResponse'
+          description: Service is unhealthy.
+      security:
+      - {}
+      summary: Fetch the health status of the Service Provider.
+      tags:
+      - Health
+      x-accepts: application/json
+  /credentials/validate:
+    post:
+      description: This endpoint is used to validate the credentials used to call
+        the Service Provider.
+      operationId: validateCredentials
+      responses:
+        "200":
+          content:
+            application/json:
+              example:
+                status: VALID
+              schema:
+                $ref: '#/components/schemas/CredentialValidationResponse'
+          description: Authentication succeeded.
+        "401":
+          content:
+            application/json:
+              example:
+                status: INVALID
+              schema:
+                $ref: '#/components/schemas/CredentialValidationResponse'
+          description: Authentication failed.
+        "429":
+          description: Too many requests.
+        "500":
+          content:
+            application/json:
+              examples:
+                Error500:
+                  $ref: '#/components/examples/Error500Response'
+              schema:
+                $ref: '#/components/schemas/BasicErrorResponse'
+          description: Unexpected error while processing request.
+        "503":
+          content:
+            application/json:
+              example:
+                status: DOWN
+                version: 1.0.0
+                description: The service is unhealthy. Several components are down.
+                components:
+                - id: app-db-memory
+                  name: Application Database Memory Usage
+                  type: DATABASE
+                  status: UP
+                - id: adapter-server
+                  name: Adapter API Server
+                  type: ADAPTER
+                  status: DOWN
+                - id: service-server
+                  name: API Server
+                  type: API
+                  status: DOWN
+                time: 2022-11-01T10:42:08.131+05:30
+              schema:
+                $ref: '#/components/schemas/HealthCheckResponse'
+          description: Service is unhealthy.
+      summary: Validate credentials
+      tags:
+      - Authentication
+      x-accepts: application/json
+  /validate-location:
+    post:
+      description: "This endpoint validates the location of a customer using the evidences\
+        \ like ip, bin, address, etc. to determine if a customer is taxable or not."
+      operationId: locationValidate
+      requestBody:
+        content:
+          application/json:
+            examples:
+              LocationValidateRequest:
+                $ref: '#/components/examples/LocationValidateRequest'
+              LocationValidateRequestAdditional:
+                $ref: '#/components/examples/LocationValidateRequestAdditional'
+            schema:
+              $ref: '#/components/schemas/LocationValidationEvidence'
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                LocationValidateResponse:
+                  $ref: '#/components/examples/LocationValidateResponse'
+                LocationValidateResponseAdditional:
+                  $ref: '#/components/examples/LocationValidateResponseAdditional'
+              schema:
+                $ref: '#/components/schemas/LocationValidateResponse'
+          description: Response to validate the location submitted successfully.
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LocationValidateErrorResponse'
+          description: Bad request.
+        "401":
+          description: Unauthenticated request.
+        "403":
+          description: Unauthorized request.
+        "429":
+          description: Too many requests.
+        "500":
+          content:
+            application/json:
+              examples:
+                Error500:
+                  $ref: '#/components/examples/Error500Response'
+              schema:
+                $ref: '#/components/schemas/BasicErrorResponse'
+          description: Unexpected error while processing request.
+        "503":
+          content:
+            application/json:
+              example:
+                status: DOWN
+                version: 1.0.0
+                description: The service is unhealthy. Several components are down.
+                components:
+                - id: app-db-memory
+                  name: Application Database Memory Usage
+                  type: DATABASE
+                  status: UP
+                - id: adapter-server
+                  name: Adapter API Server
+                  type: ADAPTER
+                  status: DOWN
+                - id: service-server
+                  name: API Server
+                  type: API
+                  status: DOWN
+                time: 2022-11-01T10:42:08.131+05:30
+              schema:
+                $ref: '#/components/schemas/HealthCheckResponse'
+          description: Service is unhealthy.
+      summary: Validate the location of customer with given evidences
+      tags:
+      - LocationValidate
+      x-content-type: application/json
+      x-accepts: application/json
+components:
+  examples:
+    LocationValidateRequest:
+      description: Request minimal details required to validate the location.
+      value:
+        customerCode: "40303265045"
+        address:
+          state: NY
+          country: US
+          postalCode: "11223"
+    LocationValidateRequestAdditional:
+      description: Request additional details to validate the location.
+      value:
+        customerCode: "40303265045"
+        address:
+          state: NY
+          country: US
+          postalCode: "11223"
+        ip: 42.13.134.12
+        bin: "411111"
+        phone: +919876543210
+        taxRegistrationNumber: FR123456789
+    LocationValidateResponse:
+      description: Response with minimal details of location validation.
+      value:
+        status: VALID
+        sourceCountry: US
+    LocationValidateResponseAdditional:
+      description: Response with additional details of location validation.
+      value:
+        status: VALID
+        sourceCountry: US
+        evidenceOrigin:
+          ip: US
+          bin: US
+          phone: IN
+          taxRegistrationNumber: FR
+          address: US
+    Error500Response:
+      description: Unexpected error during processing the request.
+      summary: Unexpected error.
+      value:
+        message: Unexpected error during processing the request.
+  responses:
+    Error400LocationValidate:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/LocationValidateErrorResponse'
+      description: Bad request.
+    Error429:
+      description: Too many requests.
+    Error500:
+      content:
+        application/json:
+          examples:
+            Error500:
+              $ref: '#/components/examples/Error500Response'
+          schema:
+            $ref: '#/components/schemas/BasicErrorResponse'
+      description: Unexpected error while processing request.
+    Error503:
+      content:
+        application/json:
+          example:
+            status: DOWN
+            version: 1.0.0
+            description: The service is unhealthy. Several components are down.
+            components:
+            - id: app-db-memory
+              name: Application Database Memory Usage
+              type: DATABASE
+              status: UP
+            - id: adapter-server
+              name: Adapter API Server
+              type: ADAPTER
+              status: DOWN
+            - id: service-server
+              name: API Server
+              type: API
+              status: DOWN
+            time: 2022-11-01T10:42:08.131+05:30
+          schema:
+            $ref: '#/components/schemas/HealthCheckResponse'
+      description: Service is unhealthy.
+    Error401:
+      description: Unauthenticated request.
+    Error403:
+      description: Unauthorized request.
+  schemas:
+    LocationValidationEvidence:
+      description: Contains the required properties for location validation response
+      example:
+        address:
+          country: country
+          city: city
+          postalCode: postalCode
+          state: state
+          line3: line3
+          line2: line2
+          line1: line1
+        phone: phone
+        bin: bin
+        ip: ip
+        name: name
+        customerCode: customerCode
+        taxRegistrationNumber: taxRegistrationNumber
+        taxIdentifiers:
+        - id: id
+          value: value
+        - id: id
+          value: value
+      properties:
+        name:
+          description: Name of the customer.
+          maxLength: 50
+          type: string
+        customerCode:
+          description: Chargebee customer code.
+          maxLength: 50
+          type: string
+        taxRegistrationNumber:
+          description: Tax registration number of the customer.
+          maxLength: 50
+          type: string
+        ip:
+          description: IP address of the customer.
+          maxLength: 10
+          type: string
+        bin:
+          description: BIN of primary card.
+          maxLength: 6
+          type: string
+        phone:
+          description: Phone number of the customer.
+          maxLength: 15
+          type: string
+        address:
+          $ref: '#/components/schemas/Address'
+        taxIdentifiers:
+          description: The tax code fields of the product used for tax calculation.
+          items:
+            $ref: '#/components/schemas/FieldItem'
+          type: array
+      required:
+      - address
+      - customerCode
+      type: object
+    LocationValidateResponse:
+      description: Contains the required properties for location validation response
+      example:
+        sourceCountry: sourceCountry
+        evidenceOrigin:
+          address: address
+          phone: phone
+          bin: bin
+          ip: ip
+          taxRegistrationNumber: taxRegistrationNumber
+          taxIdentifiers: taxIdentifiers
+        status: null
+      properties:
+        status:
+          $ref: '#/components/schemas/LocationValidationStatus'
+        sourceCountry:
+          description: SIngle country identified as location of Customer
+          type: string
+        evidenceOrigin:
+          $ref: '#/components/schemas/EvidenceOrigin'
+      required:
+      - evidenceOrigin
+      - status
+      type: object
+    EvidenceOrigin:
+      description: Source country identified from each evidence
+      example:
+        address: address
+        phone: phone
+        bin: bin
+        ip: ip
+        taxRegistrationNumber: taxRegistrationNumber
+        taxIdentifiers: taxIdentifiers
+      properties:
+        taxRegistrationNumber:
+          description: Source country from Tax registration number of the customer.
+          maxLength: 10
+          type: string
+        ip:
+          description: Source country from IP address of the customer.
+          maxLength: 10
+          type: string
+        bin:
+          description: Source country from BIN of primary card.
+          maxLength: 10
+          type: string
+        phone:
+          description: Source country from Phone number of customer.
+          maxLength: 10
+          type: string
+        address:
+          description: Source country from address of customer.
+          maxLength: 10
+          type: string
+        taxIdentifiers:
+          description: Source country from Tax Identifiers of customer.
+          maxLength: 10
+          type: string
+      type: object
+    LocationValidateErrorResponse:
+      description: Defined the structure for validation error of location validation.
+      properties:
+        errors:
+          items:
+            $ref: '#/components/schemas/LocationValidateErrorResponse_errors_inner'
+          type: array
+      required:
+      - errors
+      type: object
+    LocationValidationStatus:
+      description: The validation status of the location if a single country is identifiable.
+      enum:
+      - VALID
+      - INVALID
+      type: string
+    HealthCheckResponse:
+      example:
+        components:
+        - endpoints:
+          - endpoints
+          - endpoints
+          name: name
+          description: description
+          id: id
+          type: OTHER
+          status: null
+        - endpoints:
+          - endpoints
+          - endpoints
+          name: name
+          description: description
+          id: id
+          type: OTHER
+          status: null
+        description: description
+        time: 2000-01-23T04:56:07.000+00:00
+        version: version
+        status: null
+      properties:
+        version:
+          minLength: 1
+          type: string
+        description:
+          description: The description of the health status returned by the Service
+            Adapter.
+          maxLength: 250
+          type: string
+        status:
+          $ref: '#/components/schemas/HealthStatus'
+        components:
+          description: List of health status details for each component reported by
+            the Service Adapter.
+          items:
+            $ref: '#/components/schemas/HealthCheckComponent'
+          type: array
+        time:
+          description: The timestamp of the health status reported by the Service
+            Adapter.
+          format: date-time
+          type: string
+      required:
+      - components
+      - status
+      - time
+      type: object
+    HealthStatus:
+      description: The status of a specific component reported by the Service Adapter.
+      enum:
+      - UP
+      - DOWN
+      - WARN
+      type: string
+    HealthCheckComponent:
+      description: The health status details of a specific component reported by the
+        Service Adapter.
+      example:
+        endpoints:
+        - endpoints
+        - endpoints
+        name: name
+        description: description
+        id: id
+        type: OTHER
+        status: null
+      properties:
+        id:
+          description: The id of the component.
+          maxLength: 50
+          type: string
+        name:
+          description: The name of the component.
+          maxLength: 150
+          type: string
+        type:
+          description: |
+            The type of component affected when `status` is `WARN` or `DOWN`. The possible values are:
+            - `ADAPTER`: The reported status is for the Service Adapter.
+            - `API`: The reported status is for the Service Provider.
+            - `DATABASE`: The reported status is for a database dependency of the Service Provider.
+            - `SYSTEM`: The reported status is for any other known system component such as cache or gateway.
+            - `OTHER`: The reported status is either for a component that does not belong to the types described above or the source of the issue is unknown.
+          enum:
+          - OTHER
+          - SYSTEM
+          - API
+          - ADAPTER
+          - DATABASE
+          type: string
+        description:
+          description: The detailed status of the component.
+          maxLength: 250
+          type: string
+        status:
+          $ref: '#/components/schemas/HealthStatus'
+        endpoints:
+          description: "When the `status` of the component is not `UP`, then the list\
+            \ of endpoints affected."
+          items:
+            type: string
+          type: array
+      required:
+      - id
+      - name
+      - status
+      - type
+      type: object
+    BasicErrorResponse:
+      additionalProperties: false
+      description: The basic error response containing the error message and the help
+        documentation link.
+      properties:
+        message:
+          description: The description of the error with details about it's cause.
+          example: Invalid Credentials
+          maxLength: 250
+          type: string
+        helpUrl:
+          description: The link to the documentation for more information about the
+            error and the corrective action.
+          example: https://apidocs.chargebee.com#Authentication
+          format: uri
+          type: string
+      required:
+      - message
+      type: object
+    CredentialValidationResponse:
+      example:
+        status: null
+      properties:
+        status:
+          $ref: '#/components/schemas/CredentialStatus'
+      required:
+      - status
+      type: object
+    CredentialStatus:
+      description: The status of the credentials used for authentication.
+      enum:
+      - VALID
+      - INVALID
+      type: string
+    Address:
+      description: Represents the address used for validation.
+      example:
+        country: country
+        city: city
+        postalCode: postalCode
+        state: state
+        line3: line3
+        line2: line2
+        line1: line1
+      properties:
+        line1:
+          description: First line of the street address
+          maxLength: 180
+          type: string
+        line2:
+          description: Second line of the street address
+          maxLength: 150
+          type: string
+        line3:
+          description: Third line of the street address
+          maxLength: 150
+          type: string
+        city:
+          description: The city of the address
+          maxLength: 50
+          type: string
+        state:
+          description: The state of the address following the ISO 3166-2 state/province
+            code without the country prefix.
+          maxLength: 50
+          type: string
+        postalCode:
+          description: Postal Code / Zip Code of the address.
+          maxLength: 20
+          type: string
+        country:
+          description: The country of the address following the ISO 3166-1 alpha-2
+            standard.
+          maxLength: 2
+          type: string
+      type: object
+    FieldItem:
+      example:
+        id: id
+        value: value
+      properties:
+        id:
+          description: The id of the field.
+          maxLength: 50
+          type: string
+        value:
+          description: The value of the field.
+          maxLength: 50
+          type: string
+      required:
+      - id
+      - value
+      type: object
+    ErrorCode:
+      description: The error codes classify the type of exception that occurred during
+        processing the request.
+      enum:
+      - INVALID_OPERATION
+      - SERVICE_EXCEPTION
+      - SERVICE_UNAVAILABLE
+      - SERVICE_LIMIT_EXCEEDED
+      - MISSING_REQUIRED_DATA
+      - INVALID_DATA
+      - INVALID_TYPE
+      - INVALID_FORMAT
+      - INVALID_RANGE
+      - LOCATION_VALIDATION_FAILED
+      type: string
+    LocationValidateErrorResponse_errors_inner:
+      properties:
+        entity:
+          description: The target entity that has the invalid field or value.
+          example: Evidence
+          maxLength: 250
+          type: string
+        entityField:
+          description: The field of an entity that has the invalid value.
+          example: Evidence
+          maxLength: 250
+          type: string
+        code:
+          $ref: '#/components/schemas/ErrorCode'
+        message:
+          description: A short message describing the reason for the error.
+          example: "Could not resolve location from the given evidences. Address is\
+            \ in FR, IP is in US, phone is in India."
+          maxLength: 250
+          type: string
+        helpUrl:
+          description: The link to the documentation for more information about the
+            error and the corrective action.
+          example: https://apidocs.chargebee.com#Location
+          type: string
+      required:
+      - code
+      - message
+      type: object
+  securitySchemes:
+    bearerAuth:
+      scheme: bearer
+      type: http
+    apiKey:
+      description: Bearer token based authentication.
+      in: header
+      name: bearer
+      type: apiKey
+
