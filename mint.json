@@ -39,13 +39,10 @@
       "group": "Partner SPI",
       "version": "v2",
       "pages": [
-        {
-          "group": "Introduction",
-          "pages": [
             "api-reference/v2/Overview",
             "api-reference/v2/Authorization"
-          ]
-        },
+              ]
+    },
         {
           "group": "Tax SPI",
           "pages": [
@@ -108,15 +105,12 @@
             }
           ]
         }
-      ]
-    },
+    ,
     {
       "group": "Partner SPI",
       "version": "v1",
       "pages": [
-        {
-          "group": "Introduction",
-          "pages": [
+        
             "api-reference/v1/Overview",
             "api-reference/v1/Authorization"
           ]
@@ -220,8 +214,6 @@
             }
           ]
         }
-      ]
-    }
   ],
 
 
