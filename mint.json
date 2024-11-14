@@ -23,8 +23,14 @@
   ],
   "tabs": [
     {
-      "name": "API Reference",
-      "url": "api-reference"
+      "name": "API Reference V1",
+      "url": "v1/api-reference",
+      "version": "v1"
+    },
+    {
+      "name": "API Reference V2",
+      "url": "v2/api-reference",
+      "version": "v2"
     }
   ],
   "anchors": [
@@ -66,7 +72,17 @@
     },
     {
       "group": "Partner SPI",
-      "version": ["v1","v2"],
+      "version": "v1",
+      "pages": [
+      "api-reference/introduction",
+      "api-reference/Overview",
+      "api-reference/Authorization"
+    ]
+    },
+
+    {
+      "group": "Partner SPI",
+      "version": "v2",
       "pages": [
       "api-reference/introduction",
       "api-reference/Overview",
