@@ -45,6 +45,7 @@
     },
         {
           "group": "Tax SPI",
+          "version": "v2",
           "pages": [
             {
               "group": "TaxEstimate",
@@ -57,6 +58,7 @@
 
         {
           "group": "E-Invoicing SPI",
+          "version": "v2",
           "pages": [
             {
               "group": "Submit Document",
@@ -80,6 +82,7 @@
         },
         {
           "group": "Tax Registration Number Validation SPI",
+          "version": "v2",
           "pages": [
             {
               "group": "Authentication",
@@ -117,6 +120,7 @@
         },
         {
           "group": "Tax SPI",
+          "version": "v1",
           "pages": [
             {
               "group": "Address",
@@ -166,6 +170,7 @@
         
         {
           "group": "E-Invoicing SPI",
+          "version": "v1",
           "pages": [
             {
               "group": "Submit Document",
@@ -189,6 +194,7 @@
         },
         {
           "group": "Tax Registration Number Validation SPI",
+          "version": "v1",
           "pages": [
             {
               "group": "Authentication",
