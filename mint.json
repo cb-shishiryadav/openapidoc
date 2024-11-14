@@ -36,19 +36,16 @@
   ],
   "navigation": [
     {
-      "pages": [
-      {
-        "name": "Overview",
-        "url": "api-reference/v2/Overview"
-      },
-      {
-        "name": "Authorization",
-        "url": "api-reference/v2/Authorization"
-      }
-    ],
       "group": "Partner SPI",
       "version": "v2",
       "pages": [
+        {
+          "group": "Introduction",
+          "pages": [
+            "api-reference/v2/Overview",
+            "api-reference/v2/Authorization"
+          ]
+        },
         {
           "group": "Tax SPI",
           "pages": [
