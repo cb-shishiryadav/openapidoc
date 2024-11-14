@@ -40,7 +40,6 @@
       "version": "v2",
       "pages": [
         {
-          "group": "Introduction",
           "pages": [
             "api-reference/v2/Overview",
             "api-reference/v2/Authorization"
@@ -115,7 +114,6 @@
       "version": "v1",
       "pages": [
         {
-          "group": "Introduction",
           "pages": [
             "api-reference/v1/Overview",
             "api-reference/v1/Authorization"
