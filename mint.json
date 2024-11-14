@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Chargbeee Parter docs",
+  "name": "Chargebee Partner docs",
   "logo": {
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg"
@@ -44,6 +44,10 @@
       "url": "https://mintlify.com/blog"
     }
   ],
+  "versions": [
+    "v2",
+    "v1"
+  ],
   "navigation": [
     {
       "group": "Get Started",
@@ -65,142 +69,277 @@
       ]
     },
     {
-      "group": "Partner SPI",
-    "pages": [
-      "api-reference/introduction",
-      "api-reference/Overview",
-      "api-reference/Authorization"
-    ]
+      "group": "v2",
+      "version": "v2",
+      "pages": [
+        {
+          "group": "Partner SPI",
+          "pages": [
+            "v2/api-reference/introduction",
+            "v2/api-reference/Overview",
+            "v2/api-reference/Authorization"
+          ]
+        },
+        {
+          "group": "Tax Adapter SPI",
+          "pages": [
+            {
+              "group": "Address",
+              "pages": [
+                "v2/api-reference/endpoint/address-validation",
+                "v2/api-reference/endpoint/check-taxability"
+              ]
+            },
+            {
+              "group": "TaxEstimate",
+              "pages": [
+                "v2/api-reference/endpoint/estimate-tax"
+              ]
+            },
+            {
+              "group": "Invoice",
+              "pages": [
+                "v2/api-reference/endpoint/create-invoice",
+                "v2/api-reference/endpoint/retrieve-invoice",
+                "v2/api-reference/endpoint/commit-invoice",
+                "v2/api-reference/endpoint/void-invoice"
+              ]
+            },
+            {
+              "group": "CreditNote",
+              "pages": [
+                "v2/api-reference/endpoint/create-credit-note",
+                "v2/api-reference/endpoint/retrieve-credit-note",
+                "v2/api-reference/endpoint/commit-credit-note",
+                "v2/api-reference/endpoint/void-credit-note"
+              ]
+            },
+            {
+              "group": "Authentication",
+              "pages": [
+                "v2/api-reference/endpoint/validate-credentials"
+              ]
+            },
+            {
+              "group": "Health",
+              "pages": [
+                "v2/api-reference/endpoint/fetch-the-health-status-of-the-service-provider"
+              ]
+            }
+          ]
+        },
+        {
+          "group": "Location Validation",
+          "pages": [
+            {
+              "group": "Authentication",
+              "pages": [
+                "v2/api-reference/authentication/validate-credentials"
+              ]
+            },
+            {
+              "group": "Health",
+              "pages": [
+                "v2/api-reference/health/fetch-the-health-status-of-the-service-provider"
+              ]
+            },
+            {
+              "group": "LocationValidate",
+              "pages": [
+                "v2/api-reference/locationvalidate/validate-the-location-of-customer-with-given-evidences"
+              ]
+            }
+          ]
+        },
+        {
+          "group": "E-Invoicing",
+          "pages": [
+            {
+              "group": "PostInvoice",
+              "pages": [
+                "v2/api-reference/invoice/create-invoice"
+              ]
+            },
+            {
+              "group": "Authentication",
+              "pages": [
+                "v2/api-reference/authentication/validate-credentials"
+              ]
+            },
+            {
+              "group": "Health",
+              "pages": [
+                "v2/api-reference/health/fetch-the-health-status-of-the-service-provider"
+              ]
+            }
+          ]
+        },
+        {
+          "group": "TaxRegistrationValidation",
+          "pages": [
+            {
+              "group": "Authentication",
+              "pages": [
+                "v2/api-reference/authentication/validate-credentials"
+              ]
+            },
+            {
+              "group": "Health",
+              "pages": [
+                "v2/api-reference/health/fetch-the-health-status-of-the-service-provider"
+              ]
+            },
+            {
+              "group": "TrnValidate",
+              "pages": [
+                "v2/api-reference/trnvalidate/validate-the-tax-registration-numbers-in-batch",
+                "v2/api-reference/trnvalidate/validate-the-tax-registration-number",
+                "v2/api-reference/trnvalidate/get-the-response-of-tax-registration-number-validate-request",
+                "v2/api-reference/trnvalidate/get-the-response-of-batch-of-tax-registration-numbers",
+                "v2/api-reference/trnvalidate/delete-the-request-of-batch-of-tax-registration-numbers-validation"
+              ]
+            }
+          ]
+        }
+      ]
     },
-
-    {"group": "Tax Adapter SPI",
-         "pages": [
-          {
-            "group": "Address",
-            "pages": [
-              "api-reference/endpoint/address-validation",
-              "api-reference/endpoint/check-taxability"
-            ]
-          },
-          {
-            "group": "TaxEstimate",
-            "pages": [
-              "api-reference/endpoint/estimate-tax"
-            ]
-          },
-          {
-            "group": "Invoice",
-            "pages": [
-              "api-reference/endpoint/create-invoice",
-              "api-reference/endpoint/retrieve-invoice",
-              "api-reference/endpoint/commit-invoice",
-              "api-reference/endpoint/void-invoice"
-            ]
-          },
-          {
-            "group": "CreditNote",
-            "pages": [
-              "api-reference/endpoint/create-credit-note",
-              "api-reference/endpoint/retrieve-credit-note",
-              "api-reference/endpoint/commit-credit-note",
-              "api-reference/endpoint/void-credit-note"
-            ]
-          },
-          {
-            "group": "Authentication",
-            "pages": [
-              "api-reference/endpoint/validate-credentials"
-            ]
-          },
-          {
-            "group": "Health",
-            "pages": [
-              "api-reference/endpoint/fetch-the-health-status-of-the-service-provider"
-            ]
-          }
-          ]
-      },
-      {"group": "Location Validation",
+    {
+      "group": "v1",
+      "version": "v1",
       "pages": [
         {
-          "group": "Authentication",
+          "group": "Partner SPI",
           "pages": [
-        "api-reference/authentication/validate-credentials"
+            "v1/api-reference/introduction",
+            "v1/api-reference/Overview",
+            "v1/api-reference/Authorization"
           ]
         },
         {
-          "group": "Health",
+          "group": "Tax Adapter SPI",
           "pages": [
-        "api-reference/health/fetch-the-health-status-of-the-service-provider"
+            {
+              "group": "Address",
+              "pages": [
+                "v1/api-reference/endpoint/address-validation",
+                "v1/api-reference/endpoint/check-taxability"
+              ]
+            },
+            {
+              "group": "TaxEstimate",
+              "pages": [
+                "v1/api-reference/endpoint/estimate-tax"
+              ]
+            },
+            {
+              "group": "Invoice",
+              "pages": [
+                "v1/api-reference/endpoint/create-invoice",
+                "v1/api-reference/endpoint/retrieve-invoice",
+                "v1/api-reference/endpoint/commit-invoice",
+                "v1/api-reference/endpoint/void-invoice"
+              ]
+            },
+            {
+              "group": "CreditNote",
+              "pages": [
+                "v1/api-reference/endpoint/create-credit-note",
+                "v1/api-reference/endpoint/retrieve-credit-note",
+                "v1/api-reference/endpoint/commit-credit-note",
+                "v1/api-reference/endpoint/void-credit-note"
+              ]
+            },
+            {
+              "group": "Authentication",
+              "pages": [
+                "v1/api-reference/endpoint/validate-credentials"
+              ]
+            },
+            {
+              "group": "Health",
+              "pages": [
+                "v1/api-reference/endpoint/fetch-the-health-status-of-the-service-provider"
+              ]
+            }
           ]
         },
         {
-          "group": "LocationValidate",
+          "group": "Location Validation",
           "pages": [
-        "api-reference/locationvalidate/validate-the-location-of-customer-with-given-evidences"
+            {
+              "group": "Authentication",
+              "pages": [
+                "v1/api-reference/authentication/validate-credentials"
+              ]
+            },
+            {
+              "group": "Health",
+              "pages": [
+                "v1/api-reference/health/fetch-the-health-status-of-the-service-provider"
+              ]
+            },
+            {
+              "group": "LocationValidate",
+              "pages": [
+                "v1/api-reference/locationvalidate/validate-the-location-of-customer-with-given-evidences"
+              ]
+            }
+          ]
+        },
+        {
+          "group": "E-Invoicing",
+          "pages": [
+            {
+              "group": "PostInvoice",
+              "pages": [
+                "v1/api-reference/invoice/create-invoice"
+              ]
+            },
+            {
+              "group": "Authentication",
+              "pages": [
+                "v1/api-reference/authentication/validate-credentials"
+              ]
+            },
+            {
+              "group": "Health",
+              "pages": [
+                "v1/api-reference/health/fetch-the-health-status-of-the-service-provider"
+              ]
+            }
+          ]
+        },
+        {
+          "group": "TaxRegistrationValidation",
+          "pages": [
+            {
+              "group": "Authentication",
+              "pages": [
+                "v1/api-reference/authentication/validate-credentials"
+              ]
+            },
+            {
+              "group": "Health",
+              "pages": [
+                "v1/api-reference/health/fetch-the-health-status-of-the-service-provider"
+              ]
+            },
+            {
+              "group": "TrnValidate",
+              "pages": [
+                "v1/api-reference/trnvalidate/validate-the-tax-registration-numbers-in-batch",
+                "v1/api-reference/trnvalidate/validate-the-tax-registration-number",
+                "v1/api-reference/trnvalidate/get-the-response-of-tax-registration-number-validate-request",
+                "v1/api-reference/trnvalidate/get-the-response-of-batch-of-tax-registration-numbers",
+                "v1/api-reference/trnvalidate/delete-the-request-of-batch-of-tax-registration-numbers-validation"
+              ]
+            }
           ]
         }
-        
-       ]
-   },
-
-   {"group": "E-Invoicing",
-      "pages": [
-        {
-          "group": "PostInvoice",
-          "pages": [
-          "api-reference/invoice/create-invoice"
-          ]
-        },
-        {
-          "group": "Authentication",
-          "pages": [
-         "api-reference/authentication/validate-credentials"
-          ]
-        },
-        {
-          "group": "Health",
-          "pages": [
-         "api-reference/health/fetch-the-health-status-of-the-service-provider"
-          ]
-        }  
-           
-       ]
-   },
-
-   {"group": "TaxRegistrationValidation",
-      "pages": [
-        {
-          "group": "Authentication",
-          "pages": [
-        "api-reference/authentication/validate-credentials"
-          ]
-        },
-        {
-          "group": "Health",
-          "pages": [
-        "api-reference/health/fetch-the-health-status-of-the-service-provider"
-          ]
-        },
-        {
-          "group": "TrnValidate",
-          "pages": [
-        "api-reference/trnvalidate/validate-the-tax-registration-numbers-in-batch",
-        "api-reference/trnvalidate/validate-the-tax-registration-number",
-        "api-reference/trnvalidate/get-the-response-of-tax-registration-number-validate-request",
-        "api-reference/trnvalidate/get-the-response-of-batch-of-tax-registration-numbers",
-        "api-reference/trnvalidate/delete-the-request-of-batch-of-tax-registration-numbers-validation"
-
-          ]
-        }
-        
-       ]
-   }
+      ]
+    }
   ],
-
-  "openapi": ["/api-reference/bundled.yml", "/api-reference/locationValidation.yaml", "/api-reference/openapi_tax_versions.yaml", "/api-reference/TaxRegistrationValidation.yaml"],
-
-
+  
   "footerSocials": {
     "x": "https://x.com/mintlify",
     "github": "https://github.com/mintlify",
