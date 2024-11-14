@@ -36,14 +36,6 @@
   ],
   "navigation": [
     {
-      "group": "Get Started",
-      "pages": [
-        "introduction",
-        "quickstart",
-        "development"
-      ]
-    },
-    {
       "group": "Partner SPI",
       "version": "v2",
       "pages": [
