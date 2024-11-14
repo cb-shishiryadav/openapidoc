@@ -28,21 +28,7 @@
     }
   ],
   "anchors": [
-    {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
-    },
-    {
-      "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
-    },
-    {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
-    }
+    
   ],
   "versions": [
     "v2",
@@ -69,7 +55,7 @@
           ]
         },
         {
-          "group": "Tax Adapter SPI",
+          "group": "Tax SPI",
           "pages": [
             {
               "group": "TaxEstimate",
@@ -104,7 +90,7 @@
           ]
         },
         {
-          "group": "Tax Registration Validation SPI",
+          "group": "Tax Registration Number Validation SPI",
           "pages": [
             {
               "group": "Authentication",
@@ -144,7 +130,7 @@
           ]
         },
         {
-          "group": "Tax Adapter SPI",
+          "group": "Tax SPI",
           "pages": [
             {
               "group": "Address",
@@ -216,7 +202,7 @@
           ]
         },
         {
-          "group": "Tax Registration Validation SPI",
+          "group": "Tax Registration Number Validation SPI",
           "pages": [
             {
               "group": "Authentication",
