@@ -84,7 +84,7 @@
           "group": "E-Invoicing SPI",
           "pages": [
             {
-              "group": "PostInvoice",
+              "group": "Submit Document",
               "pages": [
                 "api-reference/v2/invoice/create-invoice"
               ]
