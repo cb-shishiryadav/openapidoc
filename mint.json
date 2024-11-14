@@ -36,15 +36,19 @@
   ],
   "navigation": [
     {
+      "pages": [
+      {
+        "name": "Overview",
+        "url": "api-reference/v2/Overview"
+      },
+      {
+        "name": "Authorization",
+        "url": "api-reference/v2/Authorization"
+      }
+    ],
       "group": "Partner SPI",
       "version": "v2",
       "pages": [
-        {
-          "pages": [
-            "api-reference/v2/Overview",
-            "api-reference/v2/Authorization"
-          ]
-        },
         {
           "group": "Tax SPI",
           "pages": [
@@ -114,12 +118,11 @@
       "version": "v1",
       "pages": [
         {
-          "name": "Overview",
-          "url": "api-reference/v2/Overview"
-        },
-        {
-          "name": "Authorization",
-          "url": "api-reference/v2/Authorization"
+          "group": "Introduction",
+          "pages": [
+            "api-reference/v1/Overview",
+            "api-reference/v1/Authorization"
+          ]
         },
         {
           "group": "Tax SPI",
