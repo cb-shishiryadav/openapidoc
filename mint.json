@@ -66,17 +66,7 @@
     },
     {
       "group": "Partner SPI",
-      "version": "v1",
-      "pages": [
-      "api-reference/introduction",
-      "api-reference/Overview",
-      "api-reference/Authorization"
-    ]
-    },
-
-    {
-      "group": "Partner SPI",
-      "version": "v2",
+      "version": ["v1","v2"],
       "pages": [
       "api-reference/introduction",
       "api-reference/Overview",
