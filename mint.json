@@ -62,30 +62,30 @@
       "version": "v2",
       "pages": [
         {
-          "group": "Introduction",
+          "group": "Introduction/v2",
           "pages": [
             "api-reference/v2/Overview",
             "api-reference/v2/Authorization"
           ]
         },
         {
-          "group": "Tax Adapter SPI",
+          "group": "Tax Adapter SPI/v2",
           "pages": [
             {
-              "group": "Address",
+              "group": "Address/v2",
               "pages": [
                 "api-reference/v2/endpoint/address-validation",
                 "api-reference/v2/endpoint/check-taxability"
               ]
             },
             {
-              "group": "TaxEstimate",
+              "group": "TaxEstimate/v2",
               "pages": [
                 "api-reference/v2/endpoint/estimate-tax"
               ]
             },
             {
-              "group": "Invoice",
+              "group": "Invoice/v2",
               "pages": [
                 "api-reference/v2/endpoint/create-invoice",
                 "api-reference/v2/endpoint/retrieve-invoice",
@@ -94,7 +94,7 @@
               ]
             },
             {
-              "group": "CreditNote",
+              "group": "CreditNote/v2",
               "pages": [
                 "api-reference/v2/endpoint/create-credit-note",
                 "api-reference/v2/endpoint/retrieve-credit-note",
@@ -103,13 +103,13 @@
               ]
             },
             {
-              "group": "Authentication",
+              "group": "Authentication/v2",
               "pages": [
                 "api-reference/v2/endpoint/validate-credentials"
               ]
             },
             {
-              "group": "Health",
+              "group": "Health/v2",
               "pages": [
                 "api-reference/v2/endpoint/fetch-the-health-status-of-the-service-provider"
               ]
@@ -117,22 +117,22 @@
           ]
         },
         {
-          "group": "Location Validation",
+          "group": "Location Validation/v2",
           "pages": [
             {
-              "group": "Authentication",
+              "group": "Authentication/v2",
               "pages": [
                 "api-reference/v2/authentication/validate-credentials"
               ]
             },
             {
-              "group": "Health",
+              "group": "Health/v2",
               "pages": [
                 "api-reference/v2/health/fetch-the-health-status-of-the-service-provider"
               ]
             },
             {
-              "group": "LocationValidate",
+              "group": "LocationValidate/v2",
               "pages": [
                 "api-reference/v2/locationvalidate/validate-the-location-of-customer-with-given-evidences"
               ]
@@ -140,22 +140,22 @@
           ]
         },
         {
-          "group": "E-Invoicing",
+          "group": "E-Invoicing/v2",
           "pages": [
             {
-              "group": "PostInvoice",
+              "group": "PostInvoice/v2",
               "pages": [
                 "api-reference/v2/invoice/create-invoice"
               ]
             },
             {
-              "group": "Authentication",
+              "group": "Authentication/v2",
               "pages": [
                 "api-reference/v2/authentication/validate-credentials"
               ]
             },
             {
-              "group": "Health",
+              "group": "Health/v2",
               "pages": [
                 "api-reference/v2/health/fetch-the-health-status-of-the-service-provider"
               ]
@@ -163,22 +163,22 @@
           ]
         },
         {
-          "group": "TaxRegistrationValidation",
+          "group": "TaxRegistrationValidation/v2",
           "pages": [
             {
-              "group": "Authentication",
+              "group": "Authentication/v2",
               "pages": [
                 "api-reference/v2/authentication/validate-credentials"
               ]
             },
             {
-              "group": "Health",
+              "group": "Health/v2",
               "pages": [
                 "api-reference/v2/health/fetch-the-health-status-of-the-service-provider"
               ]
             },
             {
-              "group": "TrnValidate",
+              "group": "TrnValidate/v2",
               "pages": [
                 "api-reference/v2/trnvalidate/validate-the-tax-registration-numbers-in-batch",
                 "api-reference/v2/trnvalidate/validate-the-tax-registration-number",
@@ -196,30 +196,30 @@
       "version": "v1",
       "pages": [
         {
-          "group": "Introduction",
+          "group": "Introduction/v1",
           "pages": [
             "api-reference/v1/Overview",
             "api-reference/v1/Authorization"
           ]
         },
         {
-          "group": "Tax Adapter SPI",
+          "group": "Tax Adapter SPI/v1",
           "pages": [
             {
-              "group": "Address",
+              "group": "Address/v1",
               "pages": [
                 "api-reference/v1/endpoint/address-validation",
                 "api-reference/v1/endpoint/check-taxability"
               ]
             },
             {
-              "group": "TaxEstimate",
+              "group": "TaxEstimate/v1",
               "pages": [
                 "api-reference/v1/endpoint/estimate-tax"
               ]
             },
             {
-              "group": "Invoice",
+              "group": "Invoice/v1",
               "pages": [
                 "api-reference/v1/endpoint/create-invoice",
                 "api-reference/v1/endpoint/retrieve-invoice",
@@ -228,7 +228,7 @@
               ]
             },
             {
-              "group": "CreditNote",
+              "group": "CreditNote/v1",
               "pages": [
                 "api-reference/v1/endpoint/create-credit-note",
                 "api-reference/v1/endpoint/retrieve-credit-note",
@@ -237,13 +237,13 @@
               ]
             },
             {
-              "group": "Authentication",
+              "group": "Authentication/v1",
               "pages": [
                 "api-reference/v1/endpoint/validate-credentials"
               ]
             },
             {
-              "group": "Health",
+              "group": "Health/v1",
               "pages": [
                 "api-reference/v1/endpoint/fetch-the-health-status-of-the-service-provider"
               ]
@@ -251,22 +251,22 @@
           ]
         },
         {
-          "group": "Location Validation",
+          "group": "Location Validation/v1",
           "pages": [
             {
-              "group": "Authentication",
+              "group": "Authentication/v1",
               "pages": [
                 "api-reference/v1/authentication/validate-credentials"
               ]
             },
             {
-              "group": "Health",
+              "group": "Health/v1",
               "pages": [
                 "api-reference/v1/health/fetch-the-health-status-of-the-service-provider"
               ]
             },
             {
-              "group": "LocationValidate",
+              "group": "LocationValidate/v1",
               "pages": [
                 "api-reference/v1/locationvalidate/validate-the-location-of-customer-with-given-evidences"
               ]
@@ -274,22 +274,22 @@
           ]
         },
         {
-          "group": "E-Invoicing",
+          "group": "E-Invoicing/v1",
           "pages": [
             {
-              "group": "PostInvoice",
+              "group": "PostInvoice/v1",
               "pages": [
                 "api-reference/v1/invoice/create-invoice"
               ]
             },
             {
-              "group": "Authentication",
+              "group": "Authentication/v1",
               "pages": [
                 "api-reference/v1/authentication/validate-credentials"
               ]
             },
             {
-              "group": "Health",
+              "group": "Health/v1",
               "pages": [
                 "api-reference/v1/health/fetch-the-health-status-of-the-service-provider"
               ]
@@ -297,22 +297,22 @@
           ]
         },
         {
-          "group": "TaxRegistrationValidation",
+          "group": "TaxRegistrationValidation/v1",
           "pages": [
             {
-              "group": "Authentication",
+              "group": "Authentication/v1",
               "pages": [
                 "api-reference/v1/authentication/validate-credentials"
               ]
             },
             {
-              "group": "Health",
+              "group": "Health/v1",
               "pages": [
                 "api-reference/v1/health/fetch-the-health-status-of-the-service-provider"
               ]
             },
             {
-              "group": "TrnValidate",
+              "group": "TrnValidate/v1",
               "pages": [
                 "api-reference/v1/trnvalidate/validate-the-tax-registration-numbers-in-batch",
                 "api-reference/v1/trnvalidate/validate-the-tax-registration-number",
