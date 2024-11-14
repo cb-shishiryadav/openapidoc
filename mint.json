@@ -74,8 +74,7 @@
             {
               "group": "TaxEstimate",
               "pages": [
-                "api-reference/v2/taxestimate/estimate-tax-1",
-                "api-reference/v2/taxestimate/estimate-tax"
+                "api-reference/v2/taxestimate/estimate-tax-1"
               ]
             }
           ]
@@ -157,7 +156,6 @@
             {
               "group": "TaxEstimate",
               "pages": [
-                "api-reference/v1/taxestimate/estimate-tax-1",
                 "api-reference/v1/taxestimate/estimate-tax"
               ]
             },
@@ -198,7 +196,7 @@
           "group": "E-Invoicing SPI",
           "pages": [
             {
-              "group": "PostInvoice",
+              "group": "Submit Document",
               "pages": [
                 "api-reference/v1/invoice/create-invoice"
               ]
