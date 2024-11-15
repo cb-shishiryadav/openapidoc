@@ -49,64 +49,46 @@
           "pages": [
             "api-reference/v2/docs/Overview",
             {
+              "group": "Address",
+              "pages": [
+                "api-reference/v2/endpoint/address-validation",
+                "api-reference/v2/endpoint/check-taxability"
+              ]
+            },
+            {
               "group": "TaxEstimate",
               "pages": [
-                "api-reference/v2/taxestimate/estimate-tax-1"
+                "api-reference/v2/taxestimate/estimate-tax"
               ]
-            }
-          ]
-        },
-
-        {
-          "group": "E-Invoicing SPI",
-          "version": "v2",
-          "pages": [
-            "api-reference/v2/docs/Overview",
+            },
             {
-              "group": "Submit Document",
+              "group": "Invoice",
               "pages": [
-                "api-reference/v2/invoice/create-invoice"
+                "api-reference/v2/endpoint/create-invoice",
+                "api-reference/v2/endpoint/retrieve-invoice",
+                "api-reference/v2/endpoint/commit-invoice",
+                "api-reference/v2/endpoint/void-invoice"
+              ]
+            },
+            {
+              "group": "CreditNote",
+              "pages": [
+                "api-reference/v2/endpoint/create-credit-note",
+                "api-reference/v2/endpoint/retrieve-credit-note",
+                "api-reference/v2/endpoint/commit-credit-note",
+                "api-reference/v2/endpoint/void-credit-note"
               ]
             },
             {
               "group": "Authentication",
               "pages": [
-                "api-reference/v2/authentication/validate-credentials"
+                "api-reference/v2/endpoint/validate-credentials"
               ]
             },
             {
               "group": "Health",
               "pages": [
-                "api-reference/v2/health/fetch-the-health-status-of-the-service-provider"
-              ]
-            }
-          ]
-        },
-        {
-          "group": "Tax Registration Number Validation SPI",
-          "version": "v2",
-          "pages": [
-            "api-reference/v2/docs/Overview",
-            {
-              "group": "Authentication",
-              "pages": [
-                "api-reference/v2/authentication/validate-credentials"
-              ]
-            },
-            {
-              "group": "Health",
-              "pages": [
-                "api-reference/v2/health/fetch-the-health-status-of-the-service-provider"
-              ]
-            },
-            {
-              "group": "TrnValidate",
-              "pages": [
-                "api-reference/v2/trnvalidate/validate-the-tax-registration-numbers-in-batch",
-                "api-reference/v2/trnvalidate/validate-the-tax-registration-number",
-                "api-reference/v2/trnvalidate/get-the-response-of-tax-registration-number-validate-request",
-                "api-reference/v2/trnvalidate/get-the-response-of-batch-of-tax-registration-numbers",
-                "api-reference/v2/trnvalidate/delete-the-request-of-batch-of-tax-registration-numbers-validation"
+                "api-reference/v2/endpoint/fetch-the-health-status-of-the-service-provider"
               ]
             }
           ]
