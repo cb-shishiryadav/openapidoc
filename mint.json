@@ -27,7 +27,9 @@
       "url": "api-reference"
     }
   ],
-  "anchors": [],
+  "anchors": [
+    
+  ],
   "versions": [
     "v2",
     "v1"
@@ -37,317 +39,178 @@
       "group": "Partner SPI",
       "version": "v2",
       "pages": [
-        "api-reference/v2/Overview",
-        "api-reference/v2/Authorization"
-      ]
+            "api-reference/v2/Overview",
+            "api-reference/v2/Authorization"
+              ]
     },
-    {
-      "group": "Tax SPI",
-      "version": "v2",
-      "pages": [
-        "api-reference/v2/docs/Overview",
         {
-          "group": "Address",
+          "group": "Tax SPI",
+          "version": "v2",
           "pages": [
+            "api-reference/v2/docs/Overview",
             {
-              "name": "Address Validation",
-              "url": "/v2/address/validate",
-              "file": "api-reference/v2/endpoint/address-validation"
+              "group": "Address",
+              "pages": [
+                "api-reference/v2/endpoint/address-validation",
+                "api-reference/v2/endpoint/check-taxability"
+              ]
             },
             {
-              "name": "Check Taxability",
-              "url": "/v2/address/taxability",
-              "file": "api-reference/v2/endpoint/check-taxability"
-            }
-          ]
-        },
-        {
-          "group": "TaxEstimate",
-          "pages": [
-            {
-              "name": "Estimate Tax",
-              "url": "/v2/tax/estimate",
-              "file": "api-reference/v2/taxestimate/estimate-tax-1"
-            }
-          ]
-        },
-        {
-          "group": "Invoice",
-          "pages": [
-            {
-              "name": "Create Invoice",
-              "url": "/v2/invoice/create",
-              "file": "api-reference/v2/endpoint/create-invoice"
+              "group": "TaxEstimate",
+              "pages": [
+                "api-reference/v2/taxestimate/estimate-tax-1"
+              ]
             },
             {
-              "name": "Retrieve Invoice",
-              "url": "/v2/invoice/retrieve",
-              "file": "api-reference/v2/endpoint/retrieve-invoice"
+              "group": "Invoice",
+              "pages": [
+                "api-reference/v2/endpoint/create-invoice",
+                "api-reference/v2/endpoint/retrieve-invoice",
+                "api-reference/v2/endpoint/commit-invoice",
+                "api-reference/v2/endpoint/void-invoice"
+              ]
             },
             {
-              "name": "Commit Invoice",
-              "url": "/v2/invoice/commit",
-              "file": "api-reference/v2/endpoint/commit-invoice"
+              "group": "CreditNote",
+              "pages": [
+                "api-reference/v2/endpoint/create-credit-note",
+                "api-reference/v2/endpoint/retrieve-credit-note",
+                "api-reference/v2/endpoint/commit-credit-note",
+                "api-reference/v2/endpoint/void-credit-note"
+              ]
             },
             {
-              "name": "Void Invoice",
-              "url": "/v2/invoice/void",
-              "file": "api-reference/v2/endpoint/void-invoice"
-            }
-          ]
-        },
-        {
-          "group": "CreditNote",
-          "pages": [
-            {
-              "name": "Create Credit Note",
-              "url": "/v2/credit-note/create",
-              "file": "api-reference/v2/endpoint/create-credit-note"
+              "group": "Authentication",
+              "pages": [
+                "api-reference/v2/endpoint/validate-credentials"
+              ]
             },
             {
-              "name": "Retrieve Credit Note",
-              "url": "/v2/credit-note/retrieve",
-              "file": "api-reference/v2/endpoint/retrieve-credit-note"
-            },
-            {
-              "name": "Commit Credit Note",
-              "url": "/v2/credit-note/commit",
-              "file": "api-reference/v2/endpoint/commit-credit-note"
-            },
-            {
-              "name": "Void Credit Note",
-              "url": "/v2/credit-note/void",
-              "file": "api-reference/v2/endpoint/void-credit-note"
-            }
-          ]
-        },
-        {
-          "group": "Authentication",
-          "pages": [
-            {
-              "name": "Validate Credentials",
-              "url": "/v2/auth/validate",
-              "file": "api-reference/v2/endpoint/validate-credentials"
-            }
-          ]
-        },
-        {
-          "group": "Health",
-          "pages": [
-            {
-              "name": "Fetch Health Status",
-              "url": "/v2/health",
-              "file": "api-reference/v2/endpoint/fetch-the-health-status-of-the-service-provider"
+              "group": "Health",
+              "pages": [
+                "api-reference/v2/endpoint/fetch-the-health-status-of-the-service-provider"
+              ]
             }
           ]
         }
-      ]
-    },
+    ,
     {
       "group": "Partner SPI",
       "version": "v1",
       "pages": [
-        "api-reference/v1/Overview",
-        "api-reference/v1/Authorization"
-      ]
-    },
-    {
-      "group": "Tax SPI",
-      "version": "v1",
-      "pages": [
-        "api-reference/v1/docs/Overview",
+        
+            "api-reference/v1/Overview",
+            "api-reference/v1/Authorization"
+          ]
+        },
         {
-          "group": "Address",
+          "group": "Tax SPI",
+          "version": "v1",
           "pages": [
+            "api-reference/v1/docs/Overview",
             {
-              "name": "Address Validation",
-              "url": "/v1/address/validate",
-              "file": "api-reference/v1/endpoint/address-validation"
+              "group": "Address",
+              "pages": [
+                "api-reference/v1/endpoint/address-validation",
+                "api-reference/v1/endpoint/check-taxability"
+              ]
             },
             {
-              "name": "Check Taxability",
-              "url": "/v1/address/taxability",
-              "file": "api-reference/v1/endpoint/check-taxability"
+              "group": "TaxEstimate",
+              "pages": [
+                "api-reference/v1/taxestimate/estimate-tax"
+              ]
+            },
+            {
+              "group": "Invoice",
+              "pages": [
+                "api-reference/v1/endpoint/create-invoice",
+                "api-reference/v1/endpoint/retrieve-invoice",
+                "api-reference/v1/endpoint/commit-invoice",
+                "api-reference/v1/endpoint/void-invoice"
+              ]
+            },
+            {
+              "group": "CreditNote",
+              "pages": [
+                "api-reference/v1/endpoint/create-credit-note",
+                "api-reference/v1/endpoint/retrieve-credit-note",
+                "api-reference/v1/endpoint/commit-credit-note",
+                "api-reference/v1/endpoint/void-credit-note"
+              ]
+            },
+            {
+              "group": "Authentication",
+              "pages": [
+                "api-reference/v1/endpoint/validate-credentials"
+              ]
+            },
+            {
+              "group": "Health",
+              "pages": [
+                "api-reference/v1/endpoint/fetch-the-health-status-of-the-service-provider"
+              ]
+            }
+          ]
+        },
+        
+        {
+          "group": "E-Invoicing SPI",
+          "version": "v1",
+          "pages": [
+            "api-reference/v2/docs/Overview",
+            {
+              "group": "Submit Document",
+              "pages": [
+                "api-reference/v1/invoice/create-invoice"
+              ]
+            },
+            {
+              "group": "Authentication",
+              "pages": [
+                "api-reference/v1/authentication/validate-credentials"
+              ]
+            },
+            {
+              "group": "Health",
+              "pages": [
+                "api-reference/v1/health/fetch-the-health-status-of-the-service-provider"
+              ]
             }
           ]
         },
         {
-          "group": "TaxEstimate",
+          "group": "Tax Registration Number Validation SPI",
+          "version": "v1",
           "pages": [
+            "api-reference/v2/docs/Overview",
             {
-              "name": "Estimate Tax",
-              "url": "/v1/tax/estimate",
-              "file": "api-reference/v1/taxestimate/estimate-tax"
-            }
-          ]
-        },
-        {
-          "group": "Invoice",
-          "pages": [
-            {
-              "name": "Create Invoice",
-              "url": "/v1/invoice/create",
-              "file": "api-reference/v1/endpoint/create-invoice"
+              "group": "Authentication",
+              "pages": [
+                "api-reference/v1/authentication/validate-credentials"
+              ]
             },
             {
-              "name": "Retrieve Invoice",
-              "url": "/v1/invoice/retrieve",
-              "file": "api-reference/v1/endpoint/retrieve-invoice"
+              "group": "Health",
+              "pages": [
+                "api-reference/v1/health/fetch-the-health-status-of-the-service-provider"
+              ]
             },
             {
-              "name": "Commit Invoice",
-              "url": "/v1/invoice/commit",
-              "file": "api-reference/v1/endpoint/commit-invoice"
-            },
-            {
-              "name": "Void Invoice",
-              "url": "/v1/invoice/void",
-              "file": "api-reference/v1/endpoint/void-invoice"
-            }
-          ]
-        },
-        {
-          "group": "CreditNote",
-          "pages": [
-            {
-              "name": "Create Credit Note",
-              "url": "/v1/credit-note/create",
-              "file": "api-reference/v1/endpoint/create-credit-note"
-            },
-            {
-              "name": "Retrieve Credit Note",
-              "url": "/v1/credit-note/retrieve",
-              "file": "api-reference/v1/endpoint/retrieve-credit-note"
-            },
-            {
-              "name": "Commit Credit Note",
-              "url": "/v1/credit-note/commit",
-              "file": "api-reference/v1/endpoint/commit-credit-note"
-            },
-            {
-              "name": "Void Credit Note",
-              "url": "/v1/credit-note/void",
-              "file": "api-reference/v1/endpoint/void-credit-note"
-            }
-          ]
-        },
-        {
-          "group": "Authentication",
-          "pages": [
-            {
-              "name": "Validate Credentials",
-              "url": "/v1/auth/validate",
-              "file": "api-reference/v1/endpoint/validate-credentials"
-            }
-          ]
-        },
-        {
-          "group": "Health",
-          "pages": [
-            {
-              "name": "Fetch Health Status",
-              "url": "/v1/health",
-              "file": "api-reference/v1/endpoint/fetch-the-health-status-of-the-service-provider"
+              "group": "TrnValidate",
+              "pages": [
+                "api-reference/v1/trnvalidate/validate-the-tax-registration-numbers-in-batch",
+                "api-reference/v1/trnvalidate/validate-the-tax-registration-number",
+                "api-reference/v1/trnvalidate/get-the-response-of-tax-registration-number-validate-request",
+                "api-reference/v1/trnvalidate/get-the-response-of-batch-of-tax-registration-numbers",
+                "api-reference/v1/trnvalidate/delete-the-request-of-batch-of-tax-registration-numbers-validation"
+              ]
             }
           ]
         }
-      ]
-    },
-    {
-      "group": "E-Invoicing SPI",
-      "version": "v1",
-      "pages": [
-        "api-reference/v2/docs/Overview",
-        {
-          "group": "Submit Document",
-          "pages": [
-            {
-              "name": "Create Invoice",
-              "url": "/v1/e-invoice/create",
-              "file": "api-reference/v1/invoice/create-invoice"
-            }
-          ]
-        },
-        {
-          "group": "Authentication",
-          "pages": [
-            {
-              "name": "Validate Credentials",
-              "url": "/v1/e-invoice/auth/validate",
-              "file": "api-reference/v1/authentication/validate-credentials"
-            }
-          ]
-        },
-        {
-          "group": "Health",
-          "pages": [
-            {
-              "name": "Fetch Health Status",
-              "url": "/v1/e-invoice/health",
-              "file": "api-reference/v1/health/fetch-the-health-status-of-the-service-provider"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "group": "Tax Registration Number Validation SPI",
-      "version": "v1",
-      "pages": [
-        "api-reference/v2/docs/Overview",
-        {
-          "group": "Authentication",
-          "pages": [
-            {
-              "name": "Validate Credentials",
-              "url": "/v1/trn/auth/validate",
-              "file": "api-reference/v1/authentication/validate-credentials"
-            }
-          ]
-        },
-        {
-          "group": "Health",
-          "pages": [
-            {
-              "name": "Fetch Health Status",
-              "url": "/v1/trn/health",
-              "file": "api-reference/v1/health/fetch-the-health-status-of-the-service-provider"
-            }
-          ]
-        },
-        {
-          "group": "TrnValidate",
-          "pages": [
-            {
-              "name": "Validate Tax Registration Numbers (Batch)",
-              "url": "/v1/trn/validate/batch",
-              "file": "api-reference/v1/trnvalidate/validate-the-tax-registration-numbers-in-batch"
-            },
-            {
-              "name": "Validate Tax Registration Number",
-              "url": "/v1/trn/validate",
-              "file": "api-reference/v1/trnvalidate/validate-the-tax-registration-number"
-            },
-            {
-              "name": "Get TRN Validation Response",
-              "url": "/v1/trn/validate/response",
-              "file": "api-reference/v1/trnvalidate/get-the-response-of-tax-registration-number-validate-request"
-            },
-            {
-              "name": "Get Batch TRN Validation Response",
-              "url": "/v1/trn/validate/batch/response",
-              "file": "api-reference/v1/trnvalidate/get-the-response-of-batch-of-tax-registration-numbers"
-            },
-            {
-              "name": "Delete Batch TRN Validation Request",
-              "url": "/v1/trn/validate/batch/delete",
-              "file": "api-reference/v1/trnvalidate/delete-the-request-of-batch-of-tax-registration-numbers-validation"
-            }
-          ]
-        }
-      ]
-    }
   ],
+
+
   "footerSocials": {
     "x": "https://x.com/mintlify",
     "github": "https://github.com/mintlify",
