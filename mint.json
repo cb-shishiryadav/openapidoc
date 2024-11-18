@@ -27,6 +27,13 @@
       "url": "api-reference"
     }
   ],
+
+  "css": [
+    "/styles/custom.css"
+  ],
+  "scripts": [
+    "/scripts/copyEndpoint.js"
+  ],
   "anchors": [
     
   ],

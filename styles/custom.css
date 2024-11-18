@@ -1,0 +1,29 @@
+.endpoint-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .copy-button {
+    padding: 4px 8px;
+    background: transparent;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: #64748b;
+    transition: all 0.2s;
+  }
+  
+  .copy-button:hover {
+    background: #f1f5f9;
+  }
+  
+  .copy-button.copied {
+    background: #dcfce7;
+    color: #22c55e;
+    border-color: #86efac;
+  }
