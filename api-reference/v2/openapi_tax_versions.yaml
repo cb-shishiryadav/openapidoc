@@ -1048,7 +1048,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/HealthCheckResponse'
           description: Service is unhealthy.
-      summary: Address validation
       tags:
       - Address
       x-content-type: application/json
