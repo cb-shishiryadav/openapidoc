@@ -262,6 +262,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/HealthCheckResponse'
           description: Service is unhealthy.
+      summary: Validate the tax registration number 
       tags:
       - TrnValidate
       x-content-type: application/json
