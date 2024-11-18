@@ -2,6 +2,20 @@
 openapi: post /address/validate
 ---
 
-import EndpointHeading from './EndpointHeading'
+import { Copy } from 'lucide-react'
 
-<EndpointHeading />
+# POST /address/validate 
+<button 
+  onClick={() => {
+    navigator.clipboard.writeText('/address/validate');
+    alert('URL copied!');
+  }}
+  style={{ 
+    marginLeft: '10px',
+    background: 'none',
+    border: 'none',
+    cursor: 'pointer'
+  }}
+>
+  <Copy size={16} />
+</button>
