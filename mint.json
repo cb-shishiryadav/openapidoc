@@ -27,7 +27,7 @@
       "url": "api-reference"
     }
   ],
-  
+
   "anchors": [
     
   ],
@@ -159,7 +159,7 @@
           "group": "E-Invoicing SPI",
           "version": "v1",
           "pages": [
-            "api-reference/v2/docs/Overview",
+            "api-reference/v1/docs/Overview",
             {
               "group": "Submit Document",
               "pages": [
@@ -184,7 +184,7 @@
           "group": "Tax Registration Number Validation SPI",
           "version": "v1",
           "pages": [
-            "api-reference/v2/docs/Overview",
+            "api-reference/v1/docs/Overview",
             {
               "group": "Authentication",
               "pages": [
