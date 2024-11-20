@@ -1163,6 +1163,9 @@ paths:
       x-accepts: application/json
 components:
   examples:
+    cURLExample:
+      value: |
+        curl -X GET "https://api.example.com/endpoint" -H "Authorization: Bearer <token>"
     TaxEstimationRequestSimple:
       description: A sample tax estimation request.
       value:
