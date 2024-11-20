@@ -35,17 +35,26 @@
   "navigation": [
     {
       "group": "Partner SPI",
-      "version": "v2",
       "pages": [
-        "api-reference/v2/Overview",
-        "api-reference/v2/Authorization"
-      ]
+        {
+          "group": "Overview",
+          "pages": [
+            "api-reference/v2/Overview",
+            "api-reference/v2/Authorization"
+          ]
+        }
+      ],
+      "version": "v2"
     },
     {
       "group": "Tax SPI",
-      "version": "v2",
       "pages": [
-        "api-reference/v2/docs/Overview",
+        {
+          "group": "Overview",
+          "pages": [
+            "api-reference/v2/docs/Overview"
+          ]
+        },
         {
           "group": "Address",
           "pages": [
@@ -89,21 +98,31 @@
             "api-reference/v2/endpoint/fetch-the-health-status-of-the-service-provider"
           ]
         }
-      ]
+      ],
+      "version": "v2"
     },
     {
       "group": "Partner SPI",
-      "version": "v1",
       "pages": [
-        "api-reference/v1/Overview",
-        "api-reference/v1/Authorization"
-      ]
+        {
+          "group": "Overview",
+          "pages": [
+            "api-reference/v1/Overview",
+            "api-reference/v1/Authorization"
+          ]
+        }
+      ],
+      "version": "v1"
     },
     {
       "group": "Tax SPI",
-      "version": "v1",
       "pages": [
-        "api-reference/v1/docs/Overview",
+        {
+          "group": "Overview",
+          "pages": [
+            "api-reference/v1/docs/Overview"
+          ]
+        },
         {
           "group": "Address",
           "pages": [
@@ -147,13 +166,18 @@
             "api-reference/v1/endpoint/fetch-the-health-status-of-the-service-provider"
           ]
         }
-      ]
+      ],
+      "version": "v1"
     },
     {
       "group": "E-Invoicing SPI",
-      "version": "v1",
       "pages": [
-        "api-reference/v1/docs/Overview",
+        {
+          "group": "Overview",
+          "pages": [
+            "api-reference/v1/docs/Overview"
+          ]
+        },
         {
           "group": "Submit Document",
           "pages": [
@@ -172,13 +196,18 @@
             "api-reference/v1/health/fetch-the-health-status-of-the-service-provider"
           ]
         }
-      ]
+      ],
+      "version": "v1"
     },
     {
       "group": "Tax Registration Number Validation SPI",
-      "version": "v1",
       "pages": [
-        "api-reference/v1/docs/Overview",
+        {
+          "group": "Overview",
+          "pages": [
+            "api-reference/v1/docs/Overview"
+          ]
+        },
         {
           "group": "Authentication",
           "pages": [
@@ -201,7 +230,8 @@
             "api-reference/v1/trnvalidate/delete-the-request-of-batch-of-tax-registration-numbers-validation"
           ]
         }
-      ]
+      ],
+      "version": "v1"
     }
   ],
   "footerSocials": {
