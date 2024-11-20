@@ -37,29 +37,34 @@
       "group": "API Reference",
       "pages": [
         {
-          "group": "Partner SPI v2",
+          "group": "Partner SPI",
           "pages": [
             "api-reference/v2/Overview",
             "api-reference/v2/Authorization"
           ]
         },
         {
-          "group": "Tax SPI v2",
+          "group": "Tax SPI",
           "pages": [
             {
               "group": "Overview",
               "pages": ["api-reference/v2/docs/Overview"]
             },
             {
-              "group": "Address & Tax",
+              "group": "Address",
               "pages": [
                 "api-reference/v2/endpoint/address-validation",
-                "api-reference/v2/endpoint/check-taxability",
+                "api-reference/v2/endpoint/check-taxability"
+              ]
+            },
+            {
+              "group": "TaxEstimate",
+              "pages": [
                 "api-reference/v2/taxestimate/estimate-tax-1"
               ]
             },
             {
-              "group": "Invoice Management",
+              "group": "Invoice",
               "pages": [
                 "api-reference/v2/endpoint/create-invoice",
                 "api-reference/v2/endpoint/retrieve-invoice",
@@ -68,7 +73,7 @@
               ]
             },
             {
-              "group": "Credit Note Management",
+              "group": "CreditNote",
               "pages": [
                 "api-reference/v2/endpoint/create-credit-note",
                 "api-reference/v2/endpoint/retrieve-credit-note",
@@ -77,38 +82,48 @@
               ]
             },
             {
-              "group": "Service Management",
+              "group": "Authentication",
               "pages": [
-                "api-reference/v2/endpoint/validate-credentials",
+                "api-reference/v2/endpoint/validate-credentials"
+              ]
+            },
+            {
+              "group": "Health",
+              "pages": [
                 "api-reference/v2/endpoint/fetch-the-health-status-of-the-service-provider"
               ]
             }
           ]
         },
         {
-          "group": "Partner SPI v1",
+          "group": "Partner SPI",
           "pages": [
             "api-reference/v1/Overview",
             "api-reference/v1/Authorization"
           ]
         },
         {
-          "group": "Tax SPI v1",
+          "group": "Tax SPI",
           "pages": [
             {
               "group": "Overview",
               "pages": ["api-reference/v1/docs/Overview"]
             },
             {
-              "group": "Address & Tax",
+              "group": "Address",
               "pages": [
                 "api-reference/v1/endpoint/address-validation",
-                "api-reference/v1/endpoint/check-taxability",
+                "api-reference/v1/endpoint/check-taxability"
+              ]
+            },
+            {
+              "group": "TaxEstimate",
+              "pages": [
                 "api-reference/v1/taxestimate/estimate-tax"
               ]
             },
             {
-              "group": "Invoice Management",
+              "group": "Invoice",
               "pages": [
                 "api-reference/v1/endpoint/create-invoice",
                 "api-reference/v1/endpoint/retrieve-invoice",
@@ -117,7 +132,7 @@
               ]
             },
             {
-              "group": "Credit Note Management",
+              "group": "CreditNote",
               "pages": [
                 "api-reference/v1/endpoint/create-credit-note",
                 "api-reference/v1/endpoint/retrieve-credit-note",
@@ -126,16 +141,21 @@
               ]
             },
             {
-              "group": "Service Management",
+              "group": "Authentication",
               "pages": [
-                "api-reference/v1/endpoint/validate-credentials",
+                "api-reference/v1/endpoint/validate-credentials"
+              ]
+            },
+            {
+              "group": "Health",
+              "pages": [
                 "api-reference/v1/endpoint/fetch-the-health-status-of-the-service-provider"
               ]
             }
           ]
         },
         {
-          "group": "E-Invoicing SPI v1",
+          "group": "E-Invoicing SPI",
           "pages": [
             {
               "group": "Overview",
@@ -146,25 +166,35 @@
               "pages": ["api-reference/v1/invoice/create-invoice"]
             },
             {
-              "group": "Service Management",
+              "group": "Authentication",
               "pages": [
-                "api-reference/v1/authentication/validate-credentials",
+                "api-reference/v1/authentication/validate-credentials"
+              ]
+            },
+            {
+              "group": "Health",
+              "pages": [
                 "api-reference/v1/health/fetch-the-health-status-of-the-service-provider"
               ]
             }
           ]
         },
         {
-          "group": "Tax Registration Number Validation SPI v1",
+          "group": "Tax Registration Number Validation SPI",
           "pages": [
             {
               "group": "Overview",
               "pages": ["api-reference/v1/docs/Overview"]
             },
             {
-              "group": "Service Management",
+              "group": "Authentication",
               "pages": [
-                "api-reference/v1/authentication/validate-credentials",
+                "api-reference/v1/authentication/validate-credentials"
+              ]
+            },
+            {
+              "group": "Health",
+              "pages": [
                 "api-reference/v1/health/fetch-the-health-status-of-the-service-provider"
               ]
             },
