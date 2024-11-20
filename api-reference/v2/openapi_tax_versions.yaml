@@ -1052,6 +1052,8 @@ paths:
       - Address
       x-content-type: application/json
       x-accepts: application/json
+      x-code-samples:
+        - lang: curl
   /address/check-taxability:
     post:
       description: Checks whether the tax address is valid in terms of tax calculation.

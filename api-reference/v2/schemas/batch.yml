@@ -1,0 +1,86 @@
+components:
+  schemas:
+    Status:
+      type: string
+      description: This field indicates current status of the request at server side.
+      enum:
+        - COMPLETED
+        - FAILED
+        - RUNNING
+        - CANCELED
+    BatchRequest:
+      type: object
+      description: Contains required properties for batch request
+      properties:
+        batchName:
+          type: string
+          description: Name of the batch
+        externalId:
+          type: string
+          description: Way to relate the request for future reference. Hold the reference value passed in request, expecting the same would be returned in response.
+    BatchResponse:
+      type: object
+      description: Contains the required properties for response of batch request.
+      required:
+        - batchId
+        - status
+        - limit
+        - offset
+      properties:
+        batchId:
+          type: string
+          description: Id of the batch request.
+        batchName:
+          type: string
+          description: Name of the batch request.
+        status:
+          $ref: '#/components/schemas/Status'
+        limit:
+          type: integer
+          description: Use for the pagination for batch request, limit indicates the maximum number of records to be returned in the response.
+        offset:
+          type: integer
+          description: Use for the pagination for batch request, offset indicates the starting point of records to be returned in the response.
+        completionPercentage:
+          type: integer
+          description: Percentage of batch request processing.
+        externalId:
+          type: string
+          description: The externalId passed in request.
+    BatchDeleteResponse:
+      type: object
+      description: Response to delete the batch request
+      required:
+        - batchId
+      properties:
+        batchId:
+          type: string
+          description: Id of the batch request
+        message:
+          type: string
+          description: Message about deleting of batch request
+
+  parameters:
+    BatchIdPathParam:
+      in: path
+      name: batchId
+      required: true
+      schema:
+        type: string
+      description: "The unique batch request identifier."
+    LimitQueryParam:
+      in: query
+      name: limit
+      required: true
+      schema:
+        type: integer
+        default: 100
+      description: "The limit number of records to be returned."
+    OffsetQueryParam:
+      in: query
+      name: offset
+      required: true
+      schema:
+        type: integer
+        default: 0
+      description: "The starting index of records to be returned."

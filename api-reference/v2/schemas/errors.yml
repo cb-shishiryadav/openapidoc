@@ -1,0 +1,83 @@
+paths:
+  components:
+  schemas:
+    ErrorCode:
+      type: string
+      description: The error codes classify the type of exception that occurred during processing the request.
+      enum:
+        - INVALID_OPERATION
+        - SERVICE_EXCEPTION
+        - SERVICE_UNAVAILABLE
+        - SERVICE_LIMIT_EXCEEDED
+        - MISSING_REQUIRED_DATA
+        - INVALID_DATA
+        - INVALID_TYPE
+        - INVALID_FORMAT
+        - INVALID_RANGE
+        - LOCATION_VALIDATION_FAILED
+    BasicErrorResponse:
+      type: object
+      description: The basic error response containing the error message and the help documentation link.
+      required:
+        - message
+      additionalProperties: false
+      properties:
+        message:
+          type: string
+          description: The description of the error with details about it's cause.
+          maxLength: 250
+          example: Invalid Credentials
+        helpUrl:
+          type: string
+          description: The link to the documentation for more information about the error and the corrective action.
+          format: uri
+          example: 'https://apidocs.chargebee.com#Authentication'
+
+  responses:
+    Error401:
+      description: Unauthenticated request.
+    Error403:
+      description: Unauthorized request.
+    Error404:
+      description: Not found.
+    Error429:
+      description: Too many requests.
+    Error500:
+      description: Unexpected error while processing request.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/BasicErrorResponse'
+          examples:
+            Error500:
+              $ref: '#/components/examples/Error500Response'
+    Error503:
+      description: Service is unhealthy.
+      content:
+        application/json:
+          schema:
+            $ref: './health.yml#/components/schemas/HealthCheckResponse'
+          example:
+            status: DOWN
+            version: 1.0.0
+            description: The service is unhealthy. Several components are down.
+            components:
+              - id: app-db-memory
+                name: Application Database Memory Usage
+                type: DATABASE
+                status: UP
+              - id: adapter-server
+                name: Adapter API Server
+                type: ADAPTER
+                status: DOWN
+              - id: service-server
+                name: API Server
+                type: API
+                status: DOWN
+            time: '2022-11-01T10:42:08.131+05:30'
+  examples:
+    Error500Response:
+      summary: Unexpected error.
+      description: Unexpected error during processing the request.
+      value:
+        message: Unexpected error during processing the request.
