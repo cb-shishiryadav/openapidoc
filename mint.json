@@ -222,9 +222,9 @@
     }
   ],
 
-  "openapi": [
-    "curl"
-  ],
+  "openapi": {
+    "languages": ["curl"]
+  },
 
   "footerSocials": {
     "x": "https://x.com/mintlify",
