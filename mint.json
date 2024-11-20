@@ -41,7 +41,9 @@
           "version": "v2",
           "pages": [
             "api-reference/v2/Overview",
-            "api-reference/v2/Authorization"
+            "api-reference/v2/Authorization",
+            "api-reference/v2/Postman Collection"
+
           ]
         },
         {
