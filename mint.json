@@ -34,12 +34,6 @@
   ],
   "navigation": [
     {
-      "group": "Get Started",
-      "pages": [
-        "introduction"
-      ]
-    },
-    {
       "group": "API Reference",
       "pages": [
         {
@@ -50,13 +44,6 @@
               "pages": [
                 "api-reference/v2/Overview",
                 "api-reference/v2/Authorization"
-              ]
-            },
-            {
-              "group": "v1",
-              "pages": [
-                "api-reference/v1/Overview",
-                "api-reference/v1/Authorization"
               ]
             }
           ]
