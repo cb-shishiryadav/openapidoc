@@ -293,6 +293,54 @@ paths:
       - TaxEstimate
       x-content-type: application/json
       x-accepts: application/json
+      x-code-samples:
+        - lang: cURL
+          label: "cURL"
+          source: |
+            curl --request POST \
+              --url https://rest.taxes.provider.com/api/v1/v2/tax-estimate \
+              --header 'Authorization: Bearer <token>' \
+              --header 'Content-Type: application/json' \
+              --data '{
+                "seller": {
+                "address": {
+                "line1": "412 63rd South Avenue",
+                "city": "Baltimore",
+                "state": "MD",
+                "country": "US",
+                "postalCode": "21230"
+                }
+              },
+                "customer": {
+                "name": "John Doe",
+                "customerCode": "customer_test",
+                "address": {
+                "line1": "59, Starlight Avenue",
+                "city": "Newark",
+                "state": "NJ",
+                "country": "US",
+                "postalCode": "98712"
+                }
+              },
+                "estimateDateTime": "2022-11-01T05:12:08.131Z",
+                "currency": "USD",
+                "lineItems": [
+                {
+                "number": 1,
+                "itemCode": "cbWatch",
+                "description": "A winding watch.",
+                "quantity": 1,
+                "amount": 100,
+                "isTaxInclusive": false,
+                "taxIdentifiers": [
+                {
+                "id": "taxCode",
+                "value": "PT12312"
+              }
+            ]
+            }
+            ]
+            }'
   /v2/tax-estimate:
     post:
       description: This endpoint is used to estimate taxes for a set of line items (V2)
