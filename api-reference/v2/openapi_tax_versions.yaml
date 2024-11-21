@@ -295,7 +295,7 @@ paths:
       x-accepts: application/json
       x-code-samples:
         - lang: cURL
-          label: "Estimate Tax"  # You can customize this label
+          label: "cURL"  # You can customize this label
           source: |
             curl --request POST \
               --url https://rest.taxes.provider.com/api/v1/tax-estimate \
@@ -435,6 +435,9 @@ paths:
       - TaxEstimate
       x-content-type: application/json
       x-accepts: application/json
+      x-code-samples:
+        - lang: cURL
+          label: "cURL"
   /invoices/v11:
     post:
       description: This endpoint is used to send an invoice to the Tax Service Provider.
