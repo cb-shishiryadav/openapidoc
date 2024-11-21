@@ -1052,13 +1052,7 @@ paths:
       - Address
       x-content-type: application/json
       x-accepts: application/json
-      x-code-samples:
-        - lang: cURL
-          label: "cURL Example"
-          source: |
-            curl -X GET "https://rest.taxes.provider.com/api/v1/address/validate" \
-              -H "Authorization: Bearer <YOUR_AUTH_TOKEN>" \
-              -H "Accept: application/json"
+      
   /address/check-taxability:
     post:
       description: Checks whether the tax address is valid in terms of tax calculation.
@@ -1159,13 +1153,7 @@ paths:
       - Address
       x-content-type: application/json
       x-accepts: application/json
-      x-code-samples:
-        - lang: cURL
-          label: "cURL Example"
-          source: |
-            curl -X GET "https://rest.taxes.provider.com/api/v1/address/check-taxability" \
-              -H "Authorization: Bearer <YOUR_AUTH_TOKEN>" \
-              -H "Accept: application/json"
+    
 components:
   examples:
     TaxEstimationRequestSimple:
