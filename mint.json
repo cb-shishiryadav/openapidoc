@@ -1,6 +1,13 @@
 {
   "$schema": "https://mintlify.com/schema.json",
   "name": "Chargebee Partner docs",
+  "api": {
+    "request": {
+      "example": {
+        "languages": ["bash"]
+      }
+    }
+  },
   "logo": {
     "dark": "/logo/brand-guidelines-logo3.svg",
     "light": "/logo/brand-guidelines-logo3.svg"
@@ -27,13 +34,7 @@
       "url": "api-reference"
     }
   ],
-  "api": {
-    "request": {
-      "example": {
-        "languages": ["curl"]
-      }
-    }
-  },
+
   "anchors": [],
   "versions": [
     "v2",
