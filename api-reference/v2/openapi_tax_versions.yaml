@@ -1055,6 +1055,22 @@ paths:
       x-code-samples:
         - lang: cURL
           label: "cURL"
+          source: |
+            curl --request POST \
+              --url https://rest.taxes.provider.com/api/v1/address/validate \
+              --header 'Authorization: Bearer <token>' \
+              --header 'Content-Type: application/json' \
+              --data '{
+                "address": {
+                "line1": "1000 main",
+                "line2": "",
+                "line3": "",
+                "city": "Irvine",
+                "state": "CA",
+                "country": "US",
+                "postalCode": "92615"
+                }
+              }'
 
   /address/check-taxability:
     post:
