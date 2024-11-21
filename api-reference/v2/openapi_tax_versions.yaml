@@ -138,13 +138,7 @@ paths:
       tags:
       - Health
       x-accepts: application/json
-      x-code-samples:
-        - lang: cURL
-          label: "cURL Example"
-          source: |
-            curl -X GET "https://rest.taxes.provider.com/api/v1/health" \
-              -H "Authorization: Bearer <YOUR_AUTH_TOKEN>" \
-              -H "Accept: application/json"
+
   /credentials/validate/v1:
     post:
       description: This endpoint is used to validate the credentials used to call
