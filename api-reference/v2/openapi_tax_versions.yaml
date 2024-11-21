@@ -48,6 +48,8 @@ servers:
   url: https://rest.taxes.provider.com/api/v1
 - description: Sandbox SPI server.
   url: https://sandbox.taxes.provider.com/api/v1
+- description: Dynamic SPI Server
+  url: https://{username}.server.com:{port}/{version}
 security:
 - bearerAuth: []
 - apiKey: []
