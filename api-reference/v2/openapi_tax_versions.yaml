@@ -337,10 +337,10 @@ paths:
                         "id": "taxCode",
                         "value": "PT12312"
                       }
-                    ]
-                  }
-                ]
-              }'
+                   ]
+                }
+              ]
+            }'
   /v2/tax-estimate:
     post:
       description: This endpoint is used to estimate taxes for a set of line items (V2)
