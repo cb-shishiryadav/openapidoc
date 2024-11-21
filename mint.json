@@ -27,6 +27,13 @@
       "url": "api-reference"
     }
   ],
+  "api": {
+    "request": {
+      "example": {
+        "languages": ["curl"]
+      }
+    }
+  },
   "anchors": [],
   "versions": [
     "v2",
