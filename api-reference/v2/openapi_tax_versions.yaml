@@ -1053,24 +1053,9 @@ paths:
       x-content-type: application/json
       x-accepts: application/json
       x-code-samples:
-      - lang: cURL
-      label: "cURL"  # You can customize this label
-    source: |
-      curl --request POST \
-        --url https://rest.taxes.provider.com/api/v1/address/validate \
-        --header 'Authorization: Bearer <YOUR_AUTH_TOKEN>' \
-        --header 'Content-Type: application/json' \
-        --data '{
-          "address": {
-            "line1": "1000 main",
-            "line2": "",
-            "line3": "",
-            "city": "Irvine",
-            "state": "CA",
-            "country": "US",
-            "postalCode": "92615"
-          }
-        }'
+        - lang: cURL
+          label: "cURL"
+
   /address/check-taxability:
     post:
       description: Checks whether the tax address is valid in terms of tax calculation.
