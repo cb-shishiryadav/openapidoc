@@ -65,7 +65,7 @@
             {
               "group": "Address",
               "pages": [
-                "api-reference/v2/endpoint/address-validation",
+                "api-reference/v2/endpoint/address-validation-test",
                 "api-reference/v2/endpoint/check-taxability"
               ]
             },
