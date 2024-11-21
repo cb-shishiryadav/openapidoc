@@ -73,7 +73,7 @@ tags:
 paths:
 
   /health:
-    $ref: './paths/health.yml'
+    $ref: './paths/health.yml#/paths/~1health'
 
   /credentials/validate:
     $ref: './paths/credentials.yml'
