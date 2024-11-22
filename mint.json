@@ -65,8 +65,8 @@
             {
               "group": "Address",
               "pages": [
-                "api-reference/address/post-addressvalidate",
-                "api-reference/address/check-taxability"
+                "api-reference/v2/endpoint/address-validation",
+                "api-reference/v2/endpoint/check-taxability"
               ]
             },
             {
