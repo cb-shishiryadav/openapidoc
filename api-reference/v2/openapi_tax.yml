@@ -57,6 +57,15 @@ servers:
     description: Production SPI server.
   - url: 'https://sandbox.taxes.provider.com/api/v1'
     description: Sandbox SPI server.
+  - url: https://{username}.server.com:{port}/{version}
+    description: Dynamic SPI Server
+    variables:
+        username:
+          default: demo
+        port:
+          default: abcd
+        version:
+          default: v1
 tags:
   - name: Address
     description: "Endpoints to validate an address and check its taxability."
