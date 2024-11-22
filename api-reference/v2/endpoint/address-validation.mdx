@@ -1,4 +1,7 @@
 ---
 openapi: post /address/validate
 ---
-<FeedbackWidget />
+<div className="flex items-center gap-2">
+  <p>Copy documentation URL</p>
+  <CopyToClipboard>{window.location.href}</CopyToClipboard>
+</div>
