@@ -9,19 +9,20 @@
     }
   },
   "logo": {
-    "dark": "/logo/brand-guidelines-logo3.svg",
-    "light": "/logo/brand-guidelines-logo3.svg"
+    "dark": "/logo/dark.svg",
+    "light": "/logo/light.svg"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon.png",
   "colors": {
-    "primary": "#0D9373",
-    "light": "#07C983",
-    "dark": "#0D9373",
+    "primary": "#ff3300",
+    "light": "#ff3300",
+    "dark": "#01283a",
     "anchors": {
-      "from": "#0D9373",
-      "to": "#07C983"
+      "from": "#ff3300",
+      "to": "#ace600"
     }
   },
+  "layout": "sidenav",
   "topbarLinks": [
     {
       "name": "Support",
