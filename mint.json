@@ -33,6 +33,10 @@
     {
       "name": "API Reference",
       "url": "api-reference"
+    },
+    {
+      "name": "App Onboarding",
+      "url": "app-onboarding"
     }
   ],
 
@@ -227,6 +231,12 @@
             }
           ]
         }
+      ]
+    },
+    {
+      "group": "App Onboarding",
+      "pages": [
+        "app-onboarding/guide"
       ]
     }
   ],

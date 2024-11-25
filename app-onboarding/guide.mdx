@@ -1,0 +1,92 @@
+---
+title: App Onboarding Guide
+description: 'Tax Provider onboarding guide to Chargebee Marketplace'
+---
+
+As a tax provider follow these steps to list your App on Chargebee’s marketplace.
+
+General Requisites
+View and understand the API spec and integration details to build a suitable adapter for the integration to work.
+
+Chargebee is Personal Identifiable Information (PII) compliant and requires its tax providers to be PII compliant as well. Chargebee shares merchant-specific confidential data to the provider's servers for tax calculation. The tax provider should provide the SLAs as a part of the agreements with the Merchant and Chargebee specifically for data deletions.
+
+Chargebee servers are built to serve its requirements; hence the adapters should accept traffic only from allow-listed servers.
+
+Chargebee and the tax provider should sign a legal contract dictating terms from both ends.
+
+As a tax provider, you are expected to
+
+Independently execute an agreement with the merchants before they start using your app.
+
+Elaborately describe the information you will be fetching from Chargebee about your customers or sales to calculate taxes and file returns.
+
+Share the following with the Chargebee team before going live:
+
+Escalation matrix that needs to be followed.
+
+Support email that merchants can reach out to.
+
+Partner support email for technical support.
+
+Links to your merchant user guides.
+
+Specific documents for configurations such as managing API keys and importing plans.
+
+Chargebee and the merchants should be informed about the system outages and scheduled maintenance on the external product status page. The tax provider is expected to maintain a status page that includes both taxation software service and the tax adapter's health status.
+
+Terms of service, consent and privacy policy pages are to be published on the website.
+
+Technical Requisites
+Availability: The adapter’s availability must be at the highest level(99.9%). If the tax provider is planning on a scheduled downtime due to maintenance, Chargebee must be provided with advance notification to reduce downtime for its customers.
+Note: Uninformed downtimes may result in the app being delisted from the marketplace.
+
+Rate limiting: Enterprise customers in Chargebee can make up to 500 requests per minute. Tax calculation is a critical part of our operations, and we may need our tax providers to adhere to at least 300 requests per minute for each customer. These will be tested during integration, and we recommend you ensure the adapters adhere to them.
+
+Latency: We expect the adapters to serve the requests with a maximum latency of 250ms. Anything greater than this latency is unacceptable.
+
+Quality: Chargebee believes in delivering top-quality tools to its customers. As a listed app in its marketplace, the tax apps should offer our merchants a consistent and positive experience.
+
+Scalability: Currently, Chargebee supports up to 1200 line items in an invoice, and this number will go up in the coming days. Tax providers should support at least these numbers and should be willing to scale this number as per requirement.
+
+Security & certifications: All communication should happen over Transport Layer Security (TLS) to ensure the channel is secure. As Chargebee is PII compliant and will share customers’ data with you, you need to have PII compliance certification to move forward with the agreement.
+
+Concurrency Handling: the ability to handle concurrency on the adapter service.
+
+Adapter Configurations
+The adapter can be easily built using open api generators. The API spec has been created keeping in mind the core features, Chargebee offers to its customers. The set of capabilities Chargebee expects of a tax provider are:
+
+Health API
+
+Validate credentials
+
+Address validation
+
+Tax estimation
+
+Invoice or Credit note creation, updation, or Retrieval
+
+Syncing of Invoices or Credit notes
+
+Go Live Steps
+Once you have completed the development of the adapter service based on the requirements mentioned here, reach out to the Chargebee taxation team at taxation@chargebee.com.
+
+We will share a configuration list that you need to fill out and share with us. We will activate the integration on your Chargebee’s test site.
+
+You need to test the integration and return to us with the results.
+
+Once you are ready, our internal review team will test your integration. This will be a combination of manual and automated testing. We will also stress-test your integration to see if you can handle our peak loads.
+
+We will also do a security review of your app.
+
+Once the review team approves your app after testing, you need to fill out a form for marketplace listing. This form will include details that will be published on your app’s landing page on the Chargebee marketplace. Also, you need to share product screenshots or videos as required.
+
+You need to accept a marketplace agreement with Chargebee.
+
+Publishing your app on the marketplace
+Initially, your app will be published as a private app on our marketplace.
+
+Private apps will be accessible to merchants on Chargebee via a private URL or backend configuration.
+
+Once you have five merchants actively engaging with your integration on Chargebee, you can reach out to taxation@chargebee.com to make your app public.
+
+Our team will review your request and make your app public.
