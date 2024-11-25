@@ -50,13 +50,6 @@
     "v1"
   ],
   "navigation": [
-    {
-      "group": "Partner SPI",
-      "pages": [
-        "api-reference/v1/Overview",
-        "api-reference/v1/Authorization"
-      ]
-    },
 
     {
       "group": "API Reference",
