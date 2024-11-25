@@ -32,7 +32,7 @@
   "tabs": [
     {
       "name": "Partner SPI",
-      "url": "partner-spi"
+      "url": "partner-spis"
     },
     {
       "name": "API Reference",
@@ -50,6 +50,13 @@
     "v1"
   ],
   "navigation": [
+    {
+      "group": "Partner SPIs",
+      "pages": [
+        "partner-spis/Overview",
+        "partner-spis/Authorization"
+      ]
+    },
     
     {
       "group": "API Reference",
@@ -117,14 +124,7 @@
             }
           ]
         },
-        {
-          "group": "Partner SPI",
-          "version": "v1",
-          "pages": [
-            "api-reference/v1/Overview",
-            "api-reference/v1/Authorization"
-          ]
-        },
+        
         {
           "group": "Tax SPI",
           "version": "v1",
