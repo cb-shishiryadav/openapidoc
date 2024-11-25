@@ -1,0 +1,17 @@
+/* Import Sora Regular from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400&display=swap');
+
+/* Apply Sora to the body and headings */
+body {
+    font-family: 'Sora', sans-serif;
+    font-weight: 400;
+    /* Regular weight for body */
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Sora', sans-serif;
+    font-weight: 400;
+    /* Regular weight for headings */
+}
