@@ -31,7 +31,7 @@
   ],
   "tabs": [
     {
-      "name": "Partner SPIs",
+      "name": "Partner SPI",
       "url": "partner-spi"
     },
     {
@@ -50,7 +50,7 @@
     "v1"
   ],
   "navigation": [
-
+    
     {
       "group": "API Reference",
       "pages": [
@@ -115,6 +115,14 @@
                 "api-reference/v2/endpoint/fetch-the-health-status-of-the-service-provider"
               ]
             }
+          ]
+        },
+        {
+          "group": "Partner SPI",
+          "version": "v1",
+          "pages": [
+            "api-reference/v1/Overview",
+            "api-reference/v1/Authorization"
           ]
         },
         {
