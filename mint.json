@@ -31,7 +31,7 @@
   ],
   "tabs": [
     {
-      "name": "Partner SPI",
+      "name": "Partner SPIs",
       "url": "partner-spi"
     },
     {
@@ -56,8 +56,6 @@
         "api-reference/v1/Overview",
         "api-reference/v1/Authorization"
       ]
-
-
     },
 
     {
